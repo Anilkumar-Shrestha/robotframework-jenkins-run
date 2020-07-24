@@ -1,9 +1,12 @@
 # robotframework-jenkins-run
-This is a simple project to show how to integrate robot run in jenkins with freestyle project.
+This is a simple project to show how to integrate robot run in jenkins with freestyle project. Robotframework-jenkins-run also provide step by step to poll scm push to trigger the build.
+It also helps on using [robotframework-metrics](https://pypi.org/project/robotframework-metrics/) to view the dashboard report on jenkins.
 
 # Table of contents
 1. [Pre-requisites](#preRequisites)
 2. [Steps in Jenkins](#jenkinsStep)
+
+[Troubleshooting viewing report](#Troubleshoot_viewreport)
 
 ## 1. Pre-requisites <a name=""></a>
 * Clone this project on your local computer.
@@ -11,8 +14,8 @@ This is a simple project to show how to integrate robot run in jenkins with free
 https://github.com/Anilkumar-Shrestha/robotframework-jenkins-run.git
 ```
 * install Jenkins on your PC. for installation, follow steps as: [install jenkins on windows](https://dzone.com/articles/how-to-install-jenkins-on-windows)
-* Go to "Manage plugins" in left bar and click on "plugin Manager". You will see the horizantal bar, click on available and type "Robot Framework plugin" on search bar. Install the plugin without restart.
- 
+* Go to "Manage plugins" in left bar and click on "plugin Manager". You will see the horizontal bar, click on available and type "Robot Framework plugin" on search bar. Install the plugin without restart.
+ ![jenkin_rf_plugin](./ss/jenkin_rf_plugin.jpg)
 
 ## 2. Steps in Jenkins <a name="jenkinsStep"></a>
 
@@ -37,4 +40,23 @@ robotmetrics -M outputReportMetrics.html --inputpath ./testresults/ --output out
 ![7_publish_rfresults](./ss/7_publish_rfresults.jpg)
 * Add testresults in directory and outputReportMetrics.html on Other files to copy box. CLick Save.
 ![8_rfmetricsreport](./ss/8_rfmetricsreport.jpg)
+
+* Now, trigger job using Build Now.
+![9_buildnow](./ss/9_buildnow.jpg)
+> > * After build is complete, click on Robot results.
+> > * Click on Original result files.
+> > * Open "outputReportMetrics.html" report.
+
+## Troubleshooting report <a name="Troubleshoot_viewreport"></a>
+If you get an error below while opening html. Please follow the steps.
+![issue_viewing_html](./ss/issue_viewing_html.jpg)
+
+1. Try enabling javascript for browser. example for [chrome](https://support.google.com/adsense/answer/12654?hl=en). 
+2. If that doesn't work :
+> > * Go to C:\Program Files (x86)\Jenkins
+> > * edit jenkins.xml file and add below code snippet in the file removing the existing one. 
+```
+<arguments>-Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war"</arguments>
+```
+![solution_html_vie](./ss/solution_html_view.jpg)
 
