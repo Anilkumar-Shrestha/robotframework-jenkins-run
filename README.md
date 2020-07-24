@@ -8,13 +8,13 @@ It also helps on using [robotframework-metrics](https://pypi.org/project/robotfr
 
 [Troubleshooting viewing report](#Troubleshoot_viewreport)
 
-## 1. Pre-requisites <a name=""></a>
+## 1. Pre-requisites <a name="preRequisites"></a>
 * Clone this project on your local computer.
 ```
 https://github.com/Anilkumar-Shrestha/robotframework-jenkins-run.git
 ```
 * install Jenkins on your PC. for installation, follow steps as: [install jenkins on windows](https://dzone.com/articles/how-to-install-jenkins-on-windows)
-* Go to "Manage plugins" in left bar and click on "plugin Manager". You will see the horizontal bar, click on available and type "Robot Framework plugin" on search bar. Install the plugin without restart.
+* Go to "Manage Jenkins" in left bar and click on "plugin Manager". You will see the horizontal bar, click on Available and type "Robot Framework plugin" on search bar. Install the plugin without restart.
  ![jenkin_rf_plugin](./ss/jenkin_rf_plugin.jpg)
 
 ## 2. Steps in Jenkins <a name="jenkinsStep"></a>
