@@ -59,8 +59,8 @@ For this, please follow below steps for configuring.
     2.    You need to configure the smtp server. Go to Manage Jenkins and click on configure system.
      ![configure_system](./ss/configure_system.jpg)
     3.    Search for "Extend" and you will land to email configure page. Add All the information as highlighted. i.e
-        > * Enter your smtp server name. For example I have entered google. You can check [this site](https://www.arclab.com/en/kb/email/list-of-smtp-and-pop3-servers-mailserver-list.html) for more information on other smtp server.
-        > *  Click “Use SMTP Authentication” and enter required information.
+            > * Enter your smtp server name. For example I have entered google. You can check [this site](https://www.arclab.com/en/kb/email/list-of-smtp-and-pop3-servers-mailserver-list.html) for more information on other smtp server.
+            > *  Click “Use SMTP Authentication” and enter required information.
         ![smtp_configure](./ss/smtp_configure.jpg)
     4.    Enter the similar information in E-mail notifications. You can check Check “Test configuration by sending test e-mail”. Click “Test configuration” to send test email.
             > *But first, we need to set 'Less secure app' ON. You can open email and go to [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps) and Set ON for Less secure app.*
