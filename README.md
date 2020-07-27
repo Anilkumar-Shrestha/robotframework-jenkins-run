@@ -50,7 +50,7 @@ robotmetrics -M outputReportMetrics.html --inputpath ./testresults/ --output out
 
 
 ## Email Notification configuration <a name="emailnotification"></a>
-If you want to configure the email notification in each build to the concern team member, we can achieve it through Jenkins.
+If you want to configure the email notification in each build to send to the concern team member, we can achieve it through Jenkins.
 For this, please follow below steps for configuring.
 
 1. Adding Plugin and Configuring mail server.
