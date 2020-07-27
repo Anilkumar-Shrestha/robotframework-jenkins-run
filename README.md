@@ -63,9 +63,11 @@ For this, please follow below steps for configuring.
         > *  Click “Use SMTP Authentication” and enter required information.
         ![smtp_configure](./ss/smtp_configure.jpg)
     4.    Enter the similar information in E-mail notifications. You can check Check “Test configuration by sending test e-mail”. Click “Test configuration” to send test email.
-        *For this you need to set 'Less secure app' ON. You can open email and go to [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps) and Set ON for Less secure app.*
-        ![enable_imap_gmail](./ss/enable_imap_gmail.jpg)
+            > *But first, we need to set 'Less secure app' ON. You can open email and go to [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps) and Set ON for Less secure app.*
         ![less_secure_app_ON](./ss/less_secure_app_ON.jpg)
+            * You should enable imap on your email settings.
+             ![enable_imap_gmail](./ss/enable_imap_gmail.jpg)
+            * After that you can Test email configurations.
         ![test_email_configuration](./ss/test_email_configuration.jpg)
     5.    Click “Save” in the bottom of the page
 
