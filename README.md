@@ -5,6 +5,7 @@ It also helps on using [robotframework-metrics](https://pypi.org/project/robotfr
 # Table of contents
 1. [Pre-requisites](#preRequisites)
 2. [Steps in Jenkins](#jenkinsStep)
+3. [Email Notification configuration](#emailnotification)
 
 [Troubleshooting viewing report](#Troubleshoot_viewreport)
 
@@ -47,6 +48,49 @@ robotmetrics -M outputReportMetrics.html --inputpath ./testresults/ --output out
 > > * Click on Original result files.
 > > * Open "outputReportMetrics.html" report.
 
+
+## Email Notification configuration <a name="emailnotification"></a>
+If you want to configure the email notification in each build to the concern team member, we can achieve it through Jenkins.
+For this, please follow below steps for configuring.
+
+1. Adding Plugin and Configuring mail server.
+    1.    We need the "Email extension Plugin" to install in jenkins. For this, Go to "Manage plugins" in left bar and click on "plugin Manager". You will see the horizontal bar, click on available and type "Email extension Plugin" on search bar. Install the plugin without restart.
+     ![email_extension_plugin](./ss/email_extension_plugin.jpg)
+    2.    You need to configure the smtp server. Go to Manage Jenkins and click on configure system.
+     ![configure_system](./ss/configure_system.jpg)
+    3.    Search for "Extend" and you will land to email configure page. Add All the information as highlighted. i.e
+        > * Enter your smtp server name. For example I have entered google. You can check [this site](https://www.arclab.com/en/kb/email/list-of-smtp-and-pop3-servers-mailserver-list.html) for more information on other smtp server.
+        > *  Click “Use SMTP Authentication” and enter required information.
+        ![smtp_configure](./ss/smtp_configure.jpg)
+    4.    Enter the similar information in E-mail notifications. You can check Check “Test configuration by sending test e-mail”. Click “Test configuration” to send test email.
+        *For this you need to set 'Less secure app' ON. You can open email and go to [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps) and Set ON for Less secure app.*
+        ![enable_imap_gmail](./ss/enable_imap_gmail.jpg)
+        ![less_secure_app_ON](./ss/less_secure_app_ON.jpg)
+        ![test_email_configuration](./ss/test_email_configuration.jpg)
+    5.    Click “Save” in the bottom of the page
+
+2. Then, Go to your project and click on Configure as shown.
+![jenkin_project_configure](./ss/jenkin_project_configure.jpg)
+
+3. Go to Post-build Actions tab and click on "Add post build actions" list menu. You will see Editable email notification, click on that.
+![editable_email_notifications](./ss/editable_email_notifications.jpg)
+
+4. Now, you will see some information you can input for customizing the email.
+    * Add the EmailID in Project from to show from where you are going to send the email. Similar to the recipient list.
+    You can add customize message as shown.
+    * You can attach output result file to the message through attachment section.
+    ![postbuild_input](./ss/postbuild_input.jpg)
+    * Go to Advance Setting as below for adding the recipient.                                                                                  
+    ![advance_email_setting](./ss/advance_email_setting.jpg)
+    * On the trigger section, click on Add and add Recipient list.
+    ![send_to_recipentlist](./ss/send_to_recipentlist.jpg)
+    * Click "Add Trigger", and select "Always" to add to Recipient list.
+    ![add_trigger_always](./ss/add_trigger_always.jpg)
+                                                                                                                                                                       
+5. Click Apply and Save.
+6. Click Build Now and enjoy your day.
+
+
 ## Troubleshooting report <a name="Troubleshoot_viewreport"></a>
 If you get an error below while opening html. Please follow the steps.
 ![issue_viewing_html](./ss/issue_viewing_html.jpg)
@@ -59,4 +103,3 @@ If you get an error below while opening html. Please follow the steps.
 <arguments>-Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war"</arguments>
 ```
 ![solution_html_vie](./ss/solution_html_view.jpg)
-
