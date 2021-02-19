@@ -14,7 +14,7 @@ It also helps on using [robotframework-metrics](https://pypi.org/project/robotfr
 ```
 https://github.com/Anilkumar-Shrestha/robotframework-jenkins-run.git
 ```
-* install Jenkins on your PC. for installation, follow steps as: [install jenkins on windows](https://dzone.com/articles/how-to-install-jenkins-on-windows)
+* install Jenkins on your PC. for installation, follow steps as: [install jenkins on windows](https://dzone.com/articles/how-to-install-jenkins-on-windows) note: Sometime you will find Jenkins under C:\windows\system32\config\systemprofile\AppData\Local\jenkins\.jenkins folder after jenkis installation.
 * Go to "Manage Jenkins" in left bar and click on "plugin Manager". You will see the horizontal bar, click on Available and type "Robot Framework plugin" on search bar. Install the plugin without restart.
  ![jenkin_rf_plugin](./ss/jenkin_rf_plugin.jpg)
 
